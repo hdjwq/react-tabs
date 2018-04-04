@@ -1,0 +1,41 @@
+.tabBar{
+    flex: 1;
+    text-align: center;
+    padding: 10px 0px;
+    position: relative;
+}
+.tabBarLanbottom{
+    position: absolute;
+    height: 2px;
+    background-color: blue;
+    left: 50%;
+    top:-1px;
+    transform: translate3d(-50%,0px,0px);
+    z-index: 99;
+}
+.tabBarLantop{
+    position: absolute;
+    height: 2px;
+    background-color: blue;
+    left: 50%;
+    bottom:-1px;
+    transform: translate3d(-50%,0px,0px);
+    z-index: 99;
+}
+.tabBarOpacity:active{
+    opacity: .5;
+}
+.barContent{
+   flex: 1;
+   align-items: center;
+}
+.full{
+    composes: borderStyle from "./index.css";
+    height: 100%;
+    top: 0px;
+}
+.int{
+    composes: borderStyle from "./index.css";
+    height: 60%;
+    top: 20%;
+}

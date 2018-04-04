@@ -1,0 +1,28 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.home{
+  height: 400px;
+}
+.find{
+  height: 400px;
+}
+.mine{
+  height: 400px;
+}
+.content{
+  height: 400px;
+}
+.box{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 300%;
+  height: 400px;
+}
+.oneBox{
+  float: left;
+  width: 33.33333333333333%;
+  height: 400px;
+}
