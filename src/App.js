@@ -1,26 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import {Tabs,TabFade,TabTraverse,TabPan} from './components'
 import './App.css'
-const start=(target,name,dco)=>{
-    dco.value=()=>{
-        console.log('hdjs')
-    }
-}
-const next=(target,name,dco)=>{
-    const me=dco.value;
-    dco.value=()=>{
-      console.log('mamam')
-    }
-}
-//堆栈机制
-class Test{
-    @next
-    @start
-    tt(){
-      console.log('fsafsa')
-    }
-}
 class App extends Component {
   constructor(props){
       super(props);
