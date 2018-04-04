@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Tabs,TabFade,TabTraverse,TabPan} from './components'
+import './components/index.css'
 import './App.css'
 class App extends Component {
   constructor(props){
@@ -21,27 +22,25 @@ class App extends Component {
     return (
       <div className="App">
           <Tabs active={active}
-                barClick={this.change}
-                transitionType={'none'}
-                barType={"opacity"}
-                barBorder={"none"}>
-              <TabPan
+                transitionType="traverse"
+                barClick={this.change}>
+              <TabTraverse
                   label={<div>你好啊</div>}
                   activeLabel={<div>我好啊</div>}>
                  <div style={{backgroundColor:"red"}}>
                      我是主页啊
                  </div>
-              </TabPan>
-              <TabPan label={'发现'}>
+              </TabTraverse>
+              <TabTraverse label={'发现'}>
                   <div style={{backgroundColor:"blue"}}>
                       我是发现啊
                   </div>
-              </TabPan>
-              <TabPan label={'我的'}>
+              </TabTraverse>
+              <TabTraverse label={'我的'}>
                   <div style={{backgroundColor:"#fff"}}>
                       我是我的啊
                   </div>
-              </TabPan>
+              </TabTraverse>
           </Tabs>
       </div>
     );

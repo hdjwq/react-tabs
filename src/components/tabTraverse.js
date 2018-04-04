@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
-import styles from './index.css'
+
 
 class Index extends Component{
     render(){
         const {width,children}=this.props;
-        return <div className={styles.tabTraverse} style={{width:width+"%"}}>
+        return <div className={"tab-traverse-component"} style={{width:width+"%"}}>
             {children}
         </div>
     }

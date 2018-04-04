@@ -1,20 +1,82 @@
-.flex{
+.wang-react-tabs{
     display: flex;
 }
-.borderStyle{
+.wang-react-tabs-full{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    flex-direction: column;
+}
+.wang-react-tabs .tab-content{
+    flex: 1;
+    position: relative;
+}
+.wang-react-tabs .tab-bar-content-top{
+    border-bottom: 1px #e3e3e3 solid;
+}
+.wang-react-tabs .tab-bar-content{
+    display: flex;
+}
+.wang-react-tabs .tab-bar-content-bottom{
+    border-top: 1px #e3e3e3 solid;
+}
+.wang-react-tabs .tab-bar{
+    flex: 1;
+    text-align: center;
+    padding: 10px 0px;
+    position: relative;
+}
+.wang-react-tabs .tab-bar-opacity:active{
+    opacity: .5;
+}
+.wang-react-tabs .tab-bar-lan{
+    position: absolute;
+    height: 2px;
+    background-color: blue;
+    left: 50%;
+    transform: translate3d(-50%,0px,0px);
+    z-index: 99;
+}
+.wang-react-tabs .tab-bar-lan-bottom{
+    top:-1px;
+}
+.wang-react-tabs .tab-bar-lan-top{
+    bottom:-1px;
+}
+.wang-react-tabs .bar-content{
+    flex: 1;
+    align-items: center;
+}
+.wang-react-tabs .bar-border{
     width: 1px;
     background-color:#e3e3e3;
     position: absolute;
     right: 0px;
 }
-.tabOpacity{
+.wang-react-tabs .bar-border-full{
+    height: 100%;
+    top: 0px;
+}
+.wang-react-tabs .bar-border-int{
+    height: 60%;
+    top: 20%;
+}
+.wang-react-tabs .tab-traverse{
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+.wang-react-tabs .tab-traverse-component{
+    float: left;
+}
+.wang-react-tabs .tab-opacity{
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: 0px;
     top: 0px;
     background-color: #ffffff;
-}
-.tabTraverse{
-    float: left;
 }

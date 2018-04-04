@@ -1,7 +1,6 @@
 import React,{Component,cloneElement} from 'react'
 import {immutableRenderDecorator} from 'react-immutable-render-mixin'
 import {Motion,spring} from 'react-motion'
-import styles from './tabs.css'
 @immutableRenderDecorator
 class Index extends Component{
     constructor(props){
@@ -26,7 +25,7 @@ class Index extends Component{
         const {size,component,oneSize}=this.props;
         return <Motion defaultStyle={{left:defaultLeft}} style={{left:spring(left)}}>
             {({left})=>{
-                return <div className={styles.tabTraverse}
+                return <div className={"tab-traverse"}
                             style={{width:100*size+"%",transform:`translate3d(${-left}%,0px,0px)`}}>
                     {component.map((item,index)=>{
                         return cloneElement(item,{width:oneSize,key:index});

@@ -2,7 +2,6 @@ import React,{Component} from 'react'
 import {Motion,spring} from 'react-motion'
 import {immutableRenderDecorator} from 'react-immutable-render-mixin'
 import PropTypes from 'prop-types'
-import styles from './index.css'
 @immutableRenderDecorator
 class Index extends Component{
     static propTypes={
@@ -36,7 +35,7 @@ class Index extends Component{
         const {children}=this.props;
         return <Motion defaultStyle={{opacity:defaultOpacity}} style={{opacity: spring(opacity)}}>
             {({opacity}) =>{
-                return <div className={styles.tabOpacity}
+                return <div className={"tab-opacity"}
                             style={{opacity:opacity/100}}>
                     {children}
                 </div>

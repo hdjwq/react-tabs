@@ -1,9 +1,9 @@
 import React,{Component,cloneElement} from 'react'
-import styles from './tabs.css'
 import PropTypes from 'prop-types'
 import TabBar from './tabBar'
 import {immutableRenderDecorator} from 'react-immutable-render-mixin'
 import TabTraverseComponent from './tabTraverseComponent'
+import cx from 'classnames'
 import {List} from 'immutable'
 @immutableRenderDecorator
 class Index extends Component{
@@ -29,6 +29,8 @@ class Index extends Component{
     }
     constructor(props){
          super(props);
+         this.clName="wang-react-tabs";
+         this.barClass="tab-bar-content";
          this.state={
              end:false
          }
@@ -60,7 +62,8 @@ class Index extends Component{
     }
     barDom=(immList)=>{
         const {active:activeIndex,barType,barBorder,barPosition}=this.props;
-        return <div className={styles["tabBar"+barPosition]}>
+        const {barClass}=this;
+        return <div className={cx(barClass,`${barClass}-${barPosition}`)}>
             {immList.map(({props},index)=>{
                 let isLast=false;
                 const active=(activeIndex===index);
@@ -85,9 +88,10 @@ class Index extends Component{
     render(){
         const {type,children,transitionType,barPosition}=this.props;
         const immList=List(children);
-        return <div className={styles[type]}>
+        const {clName}=this;
+        return <div className={cx(clName,`${clName}-${type}`)}>
             {barPosition==='top'?this.barDom(immList):null}
-              <div className={styles.tabContent}>
+              <div className={"tab-content"}>
                   {this[transitionType](immList)}
               </div>
             {barPosition==='bottom'?this.barDom(immList):null}

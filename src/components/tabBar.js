@@ -1,9 +1,8 @@
 import React,{Component} from 'react'
-import styles from './tabBar.css'
 import {Motion,spring} from 'react-motion'
 import PropTypes from 'prop-types'
 import {immutableRenderDecorator} from 'react-immutable-render-mixin'
-import classNames from 'classnames'
+import cx from 'classnames'
 @immutableRenderDecorator
 class Index extends Component{
     static propTypes={
@@ -22,6 +21,8 @@ class Index extends Component{
     constructor(props){
         super(props);
         const width=this.props.active?1:0;
+        this.barLan="tab-bar-lan";
+        this.barBorder="bar-border";
         this.state={
              width,
              defaultWidth:width
@@ -50,15 +51,16 @@ class Index extends Component{
     render(){
         const {border,isLast,click,barType,barPosition}=this.props;
         const {defaultWidth,width}=this.state;
-        return <div className={classNames(styles.tabBar,barType==='opacity'?styles.tabBarOpacity:null)} onClick={click}>
+        const {barLan,barBorder}=this;
+        return <div className={cx("tab-bar",barType==='opacity'?"tab-bar-opacity":null)} onClick={click}>
             {barType==="traverse"?<Motion defaultStyle={{width:defaultWidth}} style={{width: spring(width)}}>
-                {({width}) =><div className={styles["tabBarLan"+barPosition]}
+                {({width}) =><div className={cx(barLan,`${barLan}-${barPosition}`)}
                                   style={{width:width*100+"%"}}/>}
             </Motion>:null}
-            <div className={styles.barContent}>
+            <div className={"bar-content"}>
                 {this.labelDom()}
             </div>
-            {(!isLast||border==='none')?<div className={styles[border]}/>:null}
+            {(!isLast||border==='none')?<div className={cx(barBorder,`${barBorder}-${border}`)}/>:null}
             </div>
     }
 }

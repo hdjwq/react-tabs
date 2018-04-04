@@ -2,6 +2,9 @@
   margin: 0px;
   padding: 0px;
 }
+.App{
+  background-color:red;
+}
 .home{
   height: 400px;
 }
