@@ -77,9 +77,11 @@
 <span class="pl-smi">
  git clone git@github.com:hdjwq/react-tabs.git 或 download
 </span>
+<br/>
 <span class="pl-smi">
 npm install
 </span>
+<br/>
 <span class="pl-smi">
 npm start
 </span>
