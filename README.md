@@ -76,9 +76,14 @@
 <h3>Dome</h3>
 <span class="pl-smi">
  git clone git@github.com:hdjwq/react-tabs.git 或 download
- npm install
- npm start
 </span>
+<span class="pl-smi">
+npm install
+</span>
+<span class="pl-smi">
+npm start
+</span>
+
 <h3>备注</h3>
 <span class="pl-smi">
  欢迎提交意见，如果喜欢 star 一个呗。
