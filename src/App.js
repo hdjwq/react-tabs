@@ -1,47 +1,39 @@
 import React, { Component } from 'react';
-import {Tabs,TabFade,TabTraverse,TabPan} from './components'
+import Fade from './demo/fade'
+import Traverse from './demo/traverse'
+import None from './demo/none'
 import './components/index.css'
 import './App.css'
 class App extends Component {
   constructor(props){
       super(props);
       this.state={
-          active:1
+          index:0,
+          lx:['fade',"traverse","none"],
+          component:[Fade,Traverse,None]
       }
   }
   componentDidMount(){
 
   }
-  change=(index)=>{
-      this.setState({
-           active:index
-      })
-  }
+
   render() {
-      const {active}=this.state;
+      const {index,lx,component}=this.state;
+      const Component=component[index];
     return (
       <div className="App">
-          <Tabs active={active}
-                transitionType="traverse"
-                barClick={this.change}>
-              <TabTraverse
-                  label={<div>你好啊</div>}
-                  activeLabel={<div>我好啊</div>}>
-                 <div style={{backgroundColor:"red"}}>
-                     我是主页啊
-                 </div>
-              </TabTraverse>
-              <TabTraverse label={'发现'}>
-                  <div style={{backgroundColor:"blue"}}>
-                      我是发现啊
-                  </div>
-              </TabTraverse>
-              <TabTraverse label={'我的'}>
-                  <div style={{backgroundColor:"#fff"}}>
-                      我是我的啊
-                  </div>
-              </TabTraverse>
-          </Tabs>
+          <Component/>
+         <div className="navBar">
+             {lx.map((item,i)=>{
+                 return <div className={i===index?"btn":null}
+                              key={i}
+                              onClick={()=>{
+                                  this.setState({
+                                      index:i
+                                  })
+                              }}>{item}</div>
+             })}
+         </div>
       </div>
     );
   }
